@@ -1,0 +1,26 @@
+<h1>Listing miembrotuerca_vehiculos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Miembrotuerca</th>
+      <th>Vehiculos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @miembrotuerca_vehiculos.each do |miembrotuerca_vehiculo| %>
+      <tr>
+        <td><%= miembrotuerca_vehiculo.miembrotuerca %></td>
+        <td><%= link_to 'Show', miembrotuerca_vehiculo %></td>
+        <td><%= link_to 'Edit', edit_miembrotuerca_vehiculo_path(miembrotuerca_vehiculo) %></td>
+        <td><%= link_to 'Destroy', miembrotuerca_vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Miembrotuerca vehiculo', new_miembrotuerca_vehiculo_path %>

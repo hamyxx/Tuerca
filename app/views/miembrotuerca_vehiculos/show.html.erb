@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Miembrotuerca:</strong>
+  <%= @miembrotuerca_vehiculo.miembrotuerca %>
+</p>
+
+<p>
+  <strong>Vehiculos:</strong>
+  <%= @miembrotuerca_vehiculo.marca.modelo %>
+</p>
+<h2>Miembrotuerca: <%= @miembrotuerca.nombre %></h2>
+<h3>Nick: <%= @miembrotuerca.nick %> </h3>
+
+<h2>Vehiculos del MiembroTuerca:</h2>
+<% @vehiculos.each do |vehiculos| %>
+<strong>Nombre:</strong>
+<%= vehiculos.nombre %>
+<br>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_miembrotuerca_vehiculo_path(@miembrotuerca_vehiculo) %> |
+<%= link_to 'Back', miembrotuerca_vehiculos_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@miembrotuerca_vehiculo) do |f| %>
+  <% if @miembrotuerca_vehiculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@miembrotuerca_vehiculo.errors.count, "error") %> prohibited this miembrotuerca_vehiculo from being saved:</h2>
+
+      <ul>
+      <% @miembrotuerca_vehiculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :miembrotuerca_id %><br>
+    <%= f.select("miembrotuerca_id",Miembrotuerca.all.collect{|l|[l.nick, l.id ]}, {include_blank: 'Seleccione Miembro'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :vehiculos_id %><br>
+    <%= f.select("vehiculos_id",Vehiculo.all.collect{|l|[l.marca, l.id ]}, {include_blank: 'Seleccione Vehiculo'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

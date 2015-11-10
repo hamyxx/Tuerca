@@ -1,0 +1,39 @@
+<%= form_for(@recomendacione) do |f| %>
+  <% if @recomendacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recomendacione.errors.count, "error") %> prohibited this recomendacione from being saved:</h2>
+
+      <ul>
+      <% @recomendacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :taller %><br>
+    <%= f.text_field :taller %>
+  </div>
+  <div class="field">
+    <%= f.label :ubicacion %><br>
+    <%= f.text_field :ubicacion %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_field :comentario %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<div class="field">
+  <%= f.label :usuario_id %><br>
+  <%= f.select("usuario_id",Usuario.all.collect{|l|[l.email, l.id ]}, {include_blank: 'Seleccione Usuario'}) %>
+</div>
+
+<% end %>

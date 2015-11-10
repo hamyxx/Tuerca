@@ -1,0 +1,25 @@
+<%= form_for(@miembrotuerca) do |f| %>
+  <% if @miembrotuerca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@miembrotuerca.errors.count, "error") %> prohibited this miembrotuerca from being saved:</h2>
+
+      <ul>
+      <% @miembrotuerca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :nick %><br>
+    <%= f.text_field :nick %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

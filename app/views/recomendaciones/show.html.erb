@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @recomendacione.tipo %>
+</p>
+
+<p>
+  <strong>Taller:</strong>
+  <%= @recomendacione.taller %>
+</p>
+
+<p>
+  <strong>Ubicacion:</strong>
+  <%= @recomendacione.ubicacion %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @recomendacione.comentario %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @recomendacione.usuario.email %>
+</p>
+
+<%= link_to 'Edit', edit_recomendacione_path(@recomendacione) %> |
+<%= link_to 'Back', recomendaciones_path %>

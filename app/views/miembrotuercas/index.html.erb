@@ -1,0 +1,27 @@
+<h1>Listing miembrotuercas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Nick</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @miembrotuercas.each do |miembrotuerca| %>
+      <tr>
+        <td><%= miembrotuerca.nombre %></td>
+        <td><%= miembrotuerca.nick %></td>
+        <td><%= link_to 'Show', miembrotuerca %></td>
+        <td><%= link_to 'Edit', edit_miembrotuerca_path(miembrotuerca) %></td>
+        <td><%= link_to 'Destroy', miembrotuerca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Miembrotuerca', new_miembrotuerca_path %>
